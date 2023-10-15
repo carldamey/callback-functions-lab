@@ -26,8 +26,13 @@ function writeDing() {
 
 const words = ['short', 'medium', 'delicious', 'nice', 'lengthy'];
 
+function sortLength(a, b) {
+    return a.length - b.length
+}
+
 // The sort method sorts "in place", that is, it modifies the array
-words.sort(/* pass in a named callback here */);
+words.sort(sortLength);
+console.log(words)
 
 // Check that logging words now outputs
 // ["nice", "short", "medium", "lengthy", "delicious"]
