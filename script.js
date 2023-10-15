@@ -106,7 +106,19 @@ function step1(cb) {
       cb()
     }, 250);
   }
-  
+
+  const steps = [step1, step2, step3]
+  let stepIdx = 1
+
+  function cb() {
+    if (stepIdx < steps.length) {
+        steps[stepIdx](cb)
+        stepIdx++
+    }
+  }
+
+  step1(cb)
+
   /*
   The above functions are working asynchronous functions - DO NOT
   change any of their code. They are what we call "black boxes"
