@@ -8,7 +8,7 @@ function writeDing() {
     console.log('Ding!');
   }
   
-  let timerId = setTimeout(writeDing(), 3000);
+  let timerId = setTimeout(writeDing, 3000);
 
 
 
